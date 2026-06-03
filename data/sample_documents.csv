@@ -1,0 +1,4 @@
+id,title,source,text
+POL-001,Data Retention Policy,policy.pdf,Customer analytics data must be retained for 365 days and deleted after approved legal hold checks.
+SOP-017,Incident Escalation SOP,sop.pdf,Critical AI incidents require business owner notification within 30 minutes and executive review within 24 hours.
+POL-044,PII Handling Policy,policy.pdf,PII fields must be masked before model prompts are logged or sent to external model providers.
