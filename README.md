@@ -4,47 +4,68 @@ A production-oriented RAG blueprint for governed, measurable, enterprise knowled
 
 ## Business problem
 
-Enterprises are moving documents, policies, service knowledge, and operating procedures into GenAI workflows, but many RAG systems fail because they cannot prove accuracy, cite sources, or detect regressions.
+Policy and SOP assistant demo with hybrid retrieval, citation enforcement, and release gate scoring.
 
 ## Why it matters
 
-Enterprise AI portfolios are judged by business outcomes, architecture quality, reliability, governance, and reproducibility. This repository demonstrates practical delivery thinking rather than a tutorial-only implementation.
+Senior AI portfolios need to show more than framework familiarity. This repository demonstrates how business value, architecture thinking, measurable controls, and reproducible demos come together in an enterprise AI asset.
 
 ## Solution overview
 
-This repository defines a domain-specific Ask My Docs platform with hybrid retrieval, reranking, citation enforcement, answer-quality scoring, and release gates for retrieval and generation quality.
+Policy and SOP assistant demo with hybrid retrieval, citation enforcement, and release gate scoring.
+
+## Demo
+
+Run the included demo from the repository root:
+
+`ash
+python demo/run_demo.py
+`
+
+The demo uses sample data in data/ and deterministic Python logic in src/rag_platform/main.py, so it is easy to review without cloud credentials or paid APIs.
 
 ## Architecture
 
-The solution is organized into business context, architecture documentation, source contracts, and tests. See docs/architecture.md for the reference design and operating model.
+See docs/architecture.md for the reference architecture and operating model. See docs/demo.md for the demo walkthrough.
 
 ## Tech stack
 
-Python, FastAPI, BM25, vector search, reranking, RAG evaluation, pytest
+
 
 ## Repository structure
 
-- docs/architecture.md
-- docs/business-case.md
-- docs/roadmap.md
-- src/rag_platform/main.py
-- tests/test_contract.py
-- requirements.txt
+`	ext
+.
+|-- .github/workflows/ci.yml
+|-- data/
+|-- demo/run_demo.py
+|-- docs/
+|   |-- architecture.md
+|   |-- business-case.md
+|   |-- demo.md
+|   -- roadmap.md
+|-- src/rag_platform/main.py
+|-- tests/test_contract.py
+|-- requirements.txt
+-- README.md
+`
 
 ## Quick start
 
+`ash
 python -m venv .venv
 pip install -r requirements.txt
 pytest -q
+python demo/run_demo.py
+`
 
 ## Roadmap
 
-- Add richer domain examples and sample datasets
-- Expand implementation into a deployable FastAPI service
-- Add dashboards and architecture diagrams
-- Add evaluation reports with measurable baseline and target metrics
-- Add GitHub Actions CI after enabling token workflow scope
+- Add a richer UI or dashboard layer
+- Add architecture diagrams and deployment examples
+- Add more realistic enterprise data samples
+- Extend tests into quality, policy, and regression gates
 
 ## Enterprise relevance
 
-This repository shows how I approach AI delivery as a senior enterprise leader: start from the business problem, design the operating model, define measurable controls, and make the implementation reproducible enough for teams to extend.
+This repo is designed as a public, reviewable artifact for senior AI leadership conversations: the business case is clear, the architecture is documented, the demo is runnable, and the controls are explicit.
