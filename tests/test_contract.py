@@ -1,11 +1,13 @@
-from src.rag_platform.main import score_answer
+from pathlib import Path
+from src.rag_platform.main import answer_with_citations, load_documents, score_answer
+
+
+def test_rag_demo_returns_citation_and_gate():
+    docs = load_documents(Path("data/sample_documents.csv"))
+    result = answer_with_citations("critical AI incident escalation", docs)
+    assert result["citations"]
+    assert result["release_gate"]["pass"] is True
 
 
 def test_rag_gate_requires_citation():
-    result = score_answer(has_citation=False, retrieval_score=0.95, groundedness=0.95)
-    assert result["pass"] is False
-
-
-def test_rag_gate_passes_grounded_answer():
-    result = score_answer(has_citation=True, retrieval_score=0.86, groundedness=0.9)
-    assert result["pass"] is True
+    assert score_answer(False, 0.9, 0.9)["pass"] is False
