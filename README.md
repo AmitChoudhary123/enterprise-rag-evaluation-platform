@@ -59,6 +59,11 @@ pytest -q
 python demo/run_demo.py
 `
 
+
+## Featured evaluation asset
+
+- [RAG Evaluation Report Pack](docs/RAG-EVALUATION-REPORT-PACK.md): release-readiness scorecard, hard gates, failure register, and executive review format for enterprise RAG systems.
+
 ## Roadmap
 
 - Add a richer UI or dashboard layer
